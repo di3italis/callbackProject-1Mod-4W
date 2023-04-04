@@ -8,13 +8,13 @@ Examples:
 *******************************************************************************/
 
 function multiMap(val, n, cb) {
-    let ans = 0;
-    let loop = val;
+    let ans = val;
+
     for (i = 0; i < n; i++) {
-        // ans += cb(val);
-        loop += cb(loop);
+        ans = cb(ans);
     }
-    return loop;
+
+    return ans;
 }
 
 let result1 = multiMap(7, 2, function (n) {
