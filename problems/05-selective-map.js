@@ -20,7 +20,7 @@ function selectiveMap(array, selector, mapper) {
         }
     }
     return ans;
-}git 
+}
 
 Examples:
 
