@@ -5,6 +5,22 @@ true when passed into both callbacks.
 
 Examples:
 
+
+*******************************************************************************/
+
+function andSelect(array, cb1, cb2) {
+  let newArr = []
+
+  for (let el of array) {
+    if (cb1(el) && cb2(el)) {
+      newArr.push(el)
+    }
+  }
+
+  return newArr
+}
+
+
 let isEven = function (n) {
     return n % 2 === 0;
 };
@@ -25,12 +41,6 @@ let startsWithA = function (s) {
 }
 console.log(andSelect(['ants', 'APPLES', 'ART', 'BACON', 'arm'], isUpperCase,  startsWithA));
 // [ 'APPLES', 'ART' ]
-
-*******************************************************************************/
-
-function andSelect(array, cb1, cb2) {
-  // Your code here
-}
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
