@@ -5,14 +5,28 @@ value in the array. If a callback is passed in, then the function should return
 the result of the smallest value being passed into the given callback.
 
 Examples:
-console.log(minValueCallback([64, 25, 49, 9, 100]));             // 9
-console.log(minValueCallback([64, 25, 49, 9, 100], Math.sqrt));  // 3
 
 *******************************************************************************/
 
 function minValueCallback(array, cb) {
-    // Your code here
+  let min = Infinity
+  let minCb = Infinity
+
+  array.forEach(ele => {
+    if (!cb) {
+      if (ele < min) min = ele
+    } else {
+      if (cb(ele) < minCb) minCb = cb(ele)
+    }
+  })
+
+  if (!cb) return min
+  return minCb
 }
+
+console.log(minValueCallback([64, 25, 49, 9, 100]));             // 9
+console.log(minValueCallback([64, 25, 49, 9, 100], Math.sqrt));  // 3
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
