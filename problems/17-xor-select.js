@@ -5,6 +5,18 @@ that result in true when passed in one of the callbacks, but not both.
 
 Examples:
 
+*******************************************************************************/
+
+let xorSelect = function(array, cb1, cb2) {
+  let arr = []
+
+  array.forEach(ele => {
+    if ((cb1(ele) && !cb2(ele)) || (!cb1(ele) && cb2(ele))) arr.push(ele)
+  })
+
+  return arr
+};
+
 let isEven = function(n) {
   return n % 2 === 0;
 };
@@ -29,12 +41,6 @@ console.log(
   xorSelect(["art", "academy", "app", "cat", "buttery"], longString, startsA)
 );
 // [ 'art', 'app', 'buttery' ]
-*******************************************************************************/
-
-let xorSelect = function(array, cb1, cb2) {
-  // Your code here
-};
-
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
   module.exports = xorSelect;

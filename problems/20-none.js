@@ -7,6 +7,18 @@ the method should return false.
 
 Examples:
 
+*******************************************************************************/
+
+function none(array, cb) {
+  let answer = true
+
+  array.forEach(ele => {
+    if (cb(ele)) answer = false
+  })
+
+  return answer
+}
+
 let result1 = none(['ruby', 'topaz', 'opal'], function(w) {
     return w.includes('e');
 });
@@ -26,11 +38,8 @@ let result4 = none([4, -5, 7, -1], function(n) {
     return n < 0;
 });
 console.log(result4);   // false
-*******************************************************************************/
 
-function none(array, cb) {
-  // Your code here
-}
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {

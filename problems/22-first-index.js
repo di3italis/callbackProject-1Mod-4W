@@ -6,6 +6,16 @@ result in true, then the function should return -1.
 
 Examples:
 
+*******************************************************************************/
+
+function firstIndex(array, cb) {
+  for (let i = 0; i < array.length; i++) {
+    if (cb(array[i])) return i
+  }
+
+  return -1
+}
+
 let result1 = firstIndex([3, 7, 8, 10], function (n) {
     return n % 2 === 0;
 });
@@ -20,11 +30,8 @@ let result3 = firstIndex(['canine', 'feline', 'tree'], function (s) {
     return s.length === 3;
 });
 console.log(result3); // -1
-*******************************************************************************/
 
-function firstIndex(array, cb) {
-  // Your code here
-}
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
